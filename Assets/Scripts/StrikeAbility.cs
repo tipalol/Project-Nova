@@ -22,8 +22,8 @@ public class StrikeAbility : Ability
             //Debug.Log(GetComponent<Player>() + " _ " + GetComponent<Player>().MobKilled.GetPersistentEventCount());
             //GetComponent<Player>().MobKilled?.AddListener(() => { Debug.Log("Dimon is 2 smart ass"); });
             //GetComponent<Player>().MobKilled?.Invoke();
-            var player1rdy = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-            player1rdy.MobKilled?.Invoke();
+            //var player1rdy = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+            //player1rdy.MobKilled?.Invoke();
         }
     }
 
