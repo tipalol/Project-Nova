@@ -1,0 +1,31 @@
+﻿<Properties StartupConfiguration="{9B52C90C-7604-DD82-C9E9-C20E200CFD66}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu.cs">
+    <Files>
+      <File FileName="Assets/Plugins/CommandTerminal/CustomCommands.cs" Line="32" Column="29" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="23" Column="9" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Project-Nova" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Plugins" expanded="True">
+                <Node name="CommandTerminal" expanded="True" />
+              </Node>
+              <Node name="Scripts" expanded="True">
+                <Node name="MainMenu.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1506c985-1b79-45d0-bd92-bcf0b1231a38" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
