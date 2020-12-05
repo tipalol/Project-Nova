@@ -3,19 +3,18 @@ using CommandTerminal;
 
 public class CustomCommands : MonoBehaviour
 {
-    [RegisterCommand(Help = "Set last saved level", MinArgCount = 1, MaxArgCount = 1)]
-    static void CommandSetLastLevel(CommandArg[] args)
+    private void Start()
     {
-        string name = args[0].String;
+        Terminal.Shell.AddCommand("spawn", CommandSpawn, 1, 1, "Spawn an object");
+        Terminal.Shell.AddCommand("load", CommandLoad, 1, 1, "Loads a level");
+        Terminal.Shell.AddCommand("wtf", CommandWTF, 0, 0, "WTF???");
+        Terminal.Shell.AddCommand("die", CommandDie, 0, 0, "You will die");
+        Terminal.Shell.AddCommand("god", CommandGod, 0, 0, "Become like a developer");
 
-        if (Terminal.IssuedError) return;
-        
-        PlayerPrefs.SetString("LastSceneName", name);
-        Terminal.Log($"{name} will be loaded if continue", name);
     }
 
     [RegisterCommand(Help = "Load level", MinArgCount = 1, MaxArgCount = 1)]
-    static void CommandLoadLevel(CommandArg[] args)
+    static void CommandLoad(CommandArg[] args)
     {
         string name = args[0].String;
 
@@ -45,7 +44,7 @@ public class CustomCommands : MonoBehaviour
     }
 
     [RegisterCommand(Help = "Makes you like developer", MinArgCount = 0, MaxArgCount = 0)]
-    static void CommandBecomeGod(CommandArg[] args)
+    static void CommandGod(CommandArg[] args)
     {
         if (Terminal.IssuedError)
             return;
@@ -126,15 +125,35 @@ public class CustomCommands : MonoBehaviour
         Terminal.Log("Done");
     }
 
-    [RegisterCommand(Help = "Debug kill unity", MinArgCount = 0, MaxArgCount = 0)]
-    static void CommandDebugKill(CommandArg[] args)
+    //[RegisterCommand(Help = "Debug kill unity", MinArgCount = 0, MaxArgCount = 0)]
+    //static void CommandDebugKill(CommandArg[] args)
+    //{
+    //    if (Terminal.IssuedError)
+    //        return;
+
+    //    var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+    //    player.MobKilled?.Invoke();
+
+    //    Terminal.Log("Done");
+    //}
+
+    [RegisterCommand(Help = "Spawn new object", MinArgCount = 1, MaxArgCount = 1)]
+    static void CommandSpawn(CommandArg[] args)
     {
-        if (Terminal.IssuedError)
-            return;
+        string name = args[0].String;
 
-        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        if (Terminal.IssuedError) return;
 
-        player.MobKilled?.Invoke();
+        GameObject spawningPrefab;
+
+        spawningPrefab = Resources.Load<GameObject>($"Prefabs/{name}");
+
+        var player = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        var spawningPosition = new Vector3(player.position.x + 2, player.position.y, player.position.z);
+
+
+        Instantiate(spawningPrefab, spawningPosition, Quaternion.identity);
 
         Terminal.Log("Done");
     }

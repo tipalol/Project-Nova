@@ -1,8 +1,10 @@
 ﻿<Properties StartupConfiguration="{9B52C90C-7604-DD82-C9E9-C20E200CFD66}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MainMenu.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/CommandTerminal/README.md">
     <Files>
-      <File FileName="Assets/Plugins/CommandTerminal/CustomCommands.cs" Line="32" Column="29" />
-      <File FileName="Assets/Scripts/MainMenu.cs" Line="23" Column="9" />
+      <File FileName="Assets/Plugins/CommandTerminal/CustomCommands.cs" Line="135" Column="38" />
+      <File FileName="Assets/Scripts/MainMenu.cs" Line="4" Column="1" />
+      <File FileName="Assets/Scripts/StrikeAbility.cs" Line="26" Column="15" />
+      <File FileName="Assets/Plugins/CommandTerminal/README.md" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +15,7 @@
                 <Node name="CommandTerminal" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="MainMenu.cs" selected="True" />
+                <Node name="StrikeAbility.cs" selected="True" />
               </Node>
             </Node>
           </Node>
