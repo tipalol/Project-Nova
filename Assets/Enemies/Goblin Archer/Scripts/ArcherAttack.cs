@@ -24,6 +24,11 @@ public class ArcherAttack : MonoBehaviour
     {
         while (IsAlive)
         {
+            if (IsRightDirection() == false)
+                transform.localScale = new Vector3(-transform.localScale.x,
+                                            transform.localScale.y,
+                                            transform.localScale.z);
+
             yield return new WaitForSeconds(seconds);
             Debug.Log(Vector3.Distance(_player.position, transform.position));
             Debug.Log(Vector3.Distance(_player.position, transform.position) < AttackDistance);
@@ -38,11 +43,32 @@ public class ArcherAttack : MonoBehaviour
     private void ShootAt(Vector3 target)
     {
         var arrowPrefab = Resources.Load("Prefabs/Arrow");
-        var arrowPosition = new Vector3(transform.position.x-1, transform.position.y, transform.position.z);
+        var arrowX = transform.localScale.x < 0 ? transform.position.x-1 : transform.position.x+1;
+        var arrowPosition = new Vector3(arrowX, transform.position.y, transform.position.z);
         var arrow = Instantiate(arrowPrefab, arrowPosition, Quaternion.identity);
+        ((GameObject)arrow).GetComponent<ShootingArrow>().Rotate(-(int)GetXDirection().x);
         ((GameObject)arrow).GetComponent<ShootingArrow>().Shoot(target);
     }
 
     
+    private Vector2 GetXDirection()
+    {
+        Vector2 direction;
+        if (transform.position.x - _player.position.x < 0)
+            direction = Vector2.right; // {1, 0, 0}
+        else
+            direction = Vector2.left; // {-1, 0, 0}
+
+        return direction;
+    }
+
+    private bool IsRightDirection()
+    {
+        var xDirection = GetXDirection();
+        if (transform.localScale.x < 0)
+            return xDirection.x < 0;
+        else
+            return xDirection.x > 0;
+    }
 
 }
