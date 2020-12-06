@@ -25,8 +25,19 @@ public class Player : MonoBehaviour
     public GameUI GameUI;
     public Moving Moving;
 
+    private static Player _instance;
+
     private void Start()
     {
+        #region Should be removed after creating game manager
+        if (_instance == null)
+            _instance = this;
+        else
+            Destroy(gameObject);
+        
+        DontDestroyOnLoad(gameObject);
+        #endregion
+
         if (PlayerPrefs.HasKey("Exp"))
             Exp = PlayerPrefs.GetInt("Exp");
 
