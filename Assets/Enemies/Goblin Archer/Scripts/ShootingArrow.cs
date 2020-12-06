@@ -8,10 +8,13 @@ public class ShootingArrow : MonoBehaviour
 
     private void Start()
     {
-        transform.Rotate(new Vector3(0, 0, 90f), Space.Self);
+        //transform.Rotate(new Vector3(0, 0, 90f), Space.Self);
         _hitTarget = false;
         Destroy(gameObject, 5f);
     }
+
+    public void Rotate(int zModifer)
+        => transform.Rotate(new Vector3(0, 0, 90f * zModifer), Space.Self);
 
     public void Shoot(Vector3 target)
         => GetComponent<Rigidbody2D>()
@@ -28,7 +31,8 @@ public class ShootingArrow : MonoBehaviour
     private Vector3 CalculateFuckingShootingVector(Vector3 target, Vector3 origin)
     {
         var fuckingVector = (target - origin) * Force;
-        fuckingVector.y *= 0.6f;
+        //fuckingVector.y *= 0.6f;
+        fuckingVector.y += 1;
         return fuckingVector;
     }
 }
