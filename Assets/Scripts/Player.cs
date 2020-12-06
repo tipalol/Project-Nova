@@ -79,7 +79,7 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && CanMove
             && DashAbility.IsEnabled && !DashAbility.IsActiveCooldown)
         {
-            InvulnerAbility.StartAbility();
+            //InvulnerAbility.StartAbility();
             DashAbility.StartAbility();
             Moving.Dash();
             GameUI?.StartDashCooldown(DashAbility.GuiWaitTime);
@@ -110,6 +110,7 @@ public class Player : MonoBehaviour
             Moving.Die();
             CanMove = false;
             IsDead = true;
+            PlayOoffSound();
             StartCoroutine(RespawnCooldown(3f));
         }
     }
@@ -154,6 +155,15 @@ public class Player : MonoBehaviour
     private void PlayPopSound()
     {
         var sound = Instantiate(Resources.Load<GameObject>("Prefabs/PopSound"),
+            transform.position,
+            Quaternion.identity);
+
+        Destroy(sound, 1);
+    }
+
+    private void PlayOoffSound()
+    {
+        var sound = Instantiate(Resources.Load<GameObject>("Prefabs/OoffSound"),
             transform.position,
             Quaternion.identity);
 

@@ -1,10 +1,11 @@
 ﻿<Properties StartupConfiguration="{9B52C90C-7604-DD82-C9E9-C20E200CFD66}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Plugins/CommandTerminal/README.md">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Plugins/CommandTerminal/CustomCommands.cs" Line="135" Column="38" />
       <File FileName="Assets/Scripts/MainMenu.cs" Line="4" Column="1" />
-      <File FileName="Assets/Scripts/StrikeAbility.cs" Line="26" Column="15" />
-      <File FileName="Assets/Plugins/CommandTerminal/README.md" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/StrikeAbility.cs" />
+      <File FileName="Assets/Plugins/CommandTerminal/README.md" />
+      <File FileName="Assets/Scripts/Player.cs" Line="86" Column="10" />
+      <File FileName="Assets/Scripts/Jumping.cs" Line="34" Column="42" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,7 +16,7 @@
                 <Node name="CommandTerminal" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="StrikeAbility.cs" selected="True" />
+                <Node name="Player.cs" selected="True" />
               </Node>
             </Node>
           </Node>
@@ -25,7 +26,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1506c985-1b79-45d0-bd92-bcf0b1231a38" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="65767180-171f-449d-9058-736bf1c1a6c9" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
