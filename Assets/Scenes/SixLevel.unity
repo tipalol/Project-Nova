@@ -6873,7 +6873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbf45aa1550c4aff9b868baded0d3e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nextSceneName: Final
+  _nextSceneName: SevenLevel
 --- !u!199 &941960260
 ParticleSystemRenderer:
   serializedVersion: 6
