@@ -8,8 +8,14 @@ public class MainMenu : MonoBehaviour
     public string LastSceneName;
     public GameObject ContinueButton;
 
+    public GameObject MainPanel;
+    public GameObject OptionsPanel;
+
     public void Start()
     {
+        MainPanel.SetActive(true);
+        OptionsPanel.SetActive(false);
+
         if (PlayerPrefs.HasKey("LastSceneName"))
             LastSceneName = PlayerPrefs.GetString("LastSceneName");
         else
@@ -35,5 +41,23 @@ public class MainMenu : MonoBehaviour
     public void Exit()
     {
         Application.Quit();
+    }
+
+    public void Options()
+    {
+        MainPanel.SetActive(false);
+        OptionsPanel.SetActive(true);
+    }
+
+    public void Back()
+    {
+        MainPanel.SetActive(true);
+        OptionsPanel.SetActive(false);
+    }
+
+    public void ResolutionChanged(int resolution)
+    {
+        Screen.SetResolution(800, 600, true);
+        Debug.Log(resolution);
     }
 }
