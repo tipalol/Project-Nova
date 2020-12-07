@@ -62,13 +62,16 @@ public class ArcherAttack : MonoBehaviour
         return direction;
     }
 
+    // private bool IsRightDirection()
+    // {
+    //     var xDirection = GetXDirection();
+    //     if (transform.localScale.x < 0)
+    //         return xDirection.x < 0;
+    //     else
+    //         return xDirection.x > 0;
+    // }
+
     private bool IsRightDirection()
-    {
-        var xDirection = GetXDirection();
-        if (transform.localScale.x < 0)
-            return xDirection.x < 0;
-        else
-            return xDirection.x > 0;
-    }
+        => (transform.position.x - _player.position.x) * transform.localScale.x < 0;
 
 }
