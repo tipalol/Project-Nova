@@ -25,17 +25,18 @@ public class Player : MonoBehaviour
     public GameUI GameUI;
     public Moving Moving;
 
-    private static Player _instance;
+    private static GameObject _instance;
 
     private void Start()
     {
         #region Should be removed after creating game manager
         if (_instance == null)
-            _instance = this;
+            _instance = gameObject;
         else
             Destroy(gameObject);
         
         DontDestroyOnLoad(gameObject);
+        
         #endregion
 
         if (PlayerPrefs.HasKey("Exp"))
@@ -83,6 +84,8 @@ public class Player : MonoBehaviour
 
         if (GameObject.FindGameObjectWithTag("AchievPool") == null)
             Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/AchievmentPool"));
+        
+        Respawn();
     }
 
     private void Update()

@@ -57,7 +57,19 @@ public class MainMenu : MonoBehaviour
 
     public void ResolutionChanged(int resolution)
     {
-        Screen.SetResolution(800, 600, true);
+        switch (resolution)
+        {
+            case 0:
+                Screen.SetResolution(1920, 1080, true);
+            break;
+            case 1:
+                Screen.SetResolution(800, 600, true);
+            break;
+            default:
+                Screen.SetResolution(400, 300, true);
+            break;
+        }
+        
         Debug.Log(resolution);
     }
 }
